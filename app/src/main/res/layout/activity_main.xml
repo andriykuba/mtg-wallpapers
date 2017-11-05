@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:tileMode="repeat"
+    tools:context="com.github.andriykuba.mtgwallpapers.MainActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/buttonGallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/black"
+        android:text="@string/button_gallery_label"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <Switch
+        android:id="@+id/switchAutomatically"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="10dp"
+        android:text="@string/switch_automatically_label"
+        android:textColor="@android:color/black"
+        android:theme="@style/SwitchTheme" />
+
+    <Switch
+        android:id="@+id/switchBlur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="10dp"
+        android:text="@string/switch_blur_label"
+        android:textColor="@android:color/black"
+        android:theme="@style/SwitchTheme" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:text="@string/button_update_label"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+        <Button
+            android:id="@+id/buttonSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorBlack"
+            android:text="@string/button_set_latest_label"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/wallpaperImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:fadeScrollbars="false"
+            android:fillViewport="true">
+
+            <ImageView
+                android:id="@+id/wallpaperImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/current_wallpaper_description"
+                android:scaleType="fitCenter"
+                app:srcCompat="@android:drawable/screen_background_light_transparent" />
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/wallpaperInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorMtgTextBackgroundBlack"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="5dp"
+            android:padding="5dp"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">MTG Wallpapers</string>
+    <string name="current_wallpaper_description">Current wallpaper</string>
+    <string name="default_wallpaper_description">Press \"GET THE LATEST\"</string>
+    <string name="wallpaper_description">Wallpaper</string>
+    <string name="button_update_label">Get the latest</string>
+    <string name="button_gallery_label">Gallery</string>
+    <string name="button_set_label">Set the wallpaper</string>
+    <string name="button_set_latest_label">Set</string>
+    <string name="switch_automatically_label">Update with the latest automatically</string>
+    <string name="switch_blur_label">Blur Home screen wallpaper</string>
+    <string name="input_url_placeholder">Enter URL</string>
+
+    <string name="downloader_exception_url">The URL is wrong: %1$s. Reaason: %2$s</string>
+    <string name="downloader_exception_url_open">I can not open URL: %1$s. Reaason: %2$s</string>
+    <string name="downloader_exception_connection_close">I can not close connection: %1$s. Reaason: %2$s</string>
+    <string name="downloader_exception_json">I can not parse JSON: %1$s. Reaason: %2$s</string>
+    <string name="downloader_progress">I am downloading the wallpaper</string>
+    <string name="downloader_no_results">There is no results found in the response</string>
+    <string name="downloader_no_newer">You already have the latest wallpaper</string>
+    <string name="downloader_no_more">No more wallpapers in the gallery</string>
+
+    <string name="changer_exception">I can not set the MTG wallpaper: %1$s</string>
+    <string name="changer_progress">I am changing the wallpaper</string>
+    <string name="changer_result">The wallpaper\n\n%1$s\n%2$s\n%3$s\n%4$s\n\nwas set</string>
+
+    <string name="gallery_no_image_view">I could not find the Image View</string>
+    <string name="info_text"><![CDATA[
+<h1>About</h1>
+
+<p>The main idea of the app is to update phone wallpapers automatically when there is new art on the wizards site.</p>
+
+<p>The general scenario is to open the application, switch \"Update Automatically\" and that\'s all. Wizards site trivially updates once a week, but time is not guaranteed and could be different, so it just checks the availability of the new wallpaper once a day.</p>
+
+<p>I wish to see the original wizard\'s application for this task, but there is no one, so I did this.</p>
+
+<p>The gallery part allows you to browse the MTG wallpapers more conveniently than on the site.  Still, this is not the primary part of this application, so it is not rich.</p>
+
+<p>The wallpapers for a phone and a tablet (diagonal is more than 6.5 inch)  are different - the "Mobile" and the "Tablet" versions accordingly.</p>
+
+<h1>Disclaimer</h1>
+
+<p>Magic: The Gathering is trademarked and owned by Wizards of the Coast, Inc., a subsidiary of Hasbro, Inc.</p>
+
+<p>Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2009 Wizards. All Rights Reserved</p>
+
+<p>This application is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC. This application may use the trademarks and other intellectual property of Wizards of the Coast LLC, which is permitted under Wizards\' Fan Site Policy <a href=https://magic.wizards.com/en/community/fan-kits/m15-fan-kit>https://magic.wizards.com/en/community/fan-kits/m15-fan-kit</a>. For example, MAGIC: THE GATHERING® is a trademark[s] of Wizards of the Coast. For more information about Wizards of the Coast or any of Wizards\' trademarks or other intellectual property, please visit their website at (archive.wizards.com).</p>
+    ]]>
+    </string>
+</resources>

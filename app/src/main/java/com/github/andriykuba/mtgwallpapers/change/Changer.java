@@ -99,7 +99,7 @@ public class Changer extends AsyncTask<String, Void, String> {
                 .submit(screen.widthPixels, screen.heightPixels)
                 .get();
 
-        wallpaperManager.setBitmap(bitmap);
+        wallpaperManager.setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM);
     }
 
     @Override

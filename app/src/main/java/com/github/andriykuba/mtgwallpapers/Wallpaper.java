@@ -1,8 +1,11 @@
 package com.github.andriykuba.mtgwallpapers;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,8 +61,11 @@ public class Wallpaper {
     private static void open(final Context context, final File resource) {
         final Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
-        final Uri imgUri = Uri.fromFile(resource);
+        final Uri imgUri = FileProvider.getUriForFile(context, "com.github.andriykuba.mtgwallpapers.WallpaperFileProvider", resource);
+        intent.setClipData(ClipData.newRawUri("", imgUri));
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         intent.setDataAndType(imgUri, "image/*");
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imgUri);
         context.startActivity(intent);
     }
 

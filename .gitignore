@@ -1,0 +1,9 @@
+*.iml
+.gradle
+/app/mtg-wallpapers*
+/.idea/*
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild

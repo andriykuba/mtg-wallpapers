@@ -51,8 +51,10 @@ public class Changer extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         try {
-            Bitmap bitmap = downloadBitmap(data.url);
-            WallpaperManager.getInstance(context).setBitmap(bitmap);
+            WallpaperManager wallpaperManager = WallpaperManager.getInstance(context);
+            setLockWallpaper(wallpaperManager);
+            setHomeWallpaper(wallpaperManager);
+
             return context.getString(
                     R.string.changer_result,
                     data.name.toUpperCase(),
@@ -64,7 +66,21 @@ public class Changer extends AsyncTask<String, Void, String> {
         }
     }
 
-    private Bitmap downloadBitmap(String url) throws ExecutionException, InterruptedException {
+    private void setLockWallpaper(WallpaperManager wallpaperManager) throws ExecutionException, InterruptedException, IOException {
+        final Transformation<Bitmap> centerInside = new CenterInside();
+
+        Bitmap bitmap = GlideApp
+                .with(context.getApplicationContext())
+                .asBitmap()
+                .load(data.url)
+                .transform(centerInside)
+                .submit(screen.widthPixels, screen.heightPixels)
+                .get();
+
+        wallpaperManager.setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK);
+    }
+
+    private void setHomeWallpaper(WallpaperManager wallpaperManager) throws ExecutionException, InterruptedException, IOException {
         final Persist persist = new Persist(context);
 
         GlideRequest<Bitmap> bitmapGlideRequest = GlideApp
@@ -79,9 +95,11 @@ public class Changer extends AsyncTask<String, Void, String> {
             bitmapGlideRequest.transform(centerInside);
         }
 
-        return bitmapGlideRequest
+        Bitmap bitmap = bitmapGlideRequest
                 .submit(screen.widthPixels, screen.heightPixels)
                 .get();
+
+        wallpaperManager.setBitmap(bitmap);
     }
 
     @Override
